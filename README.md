@@ -1,2 +1,2 @@
 # it_sikkerhed_2026f
-Zealand
+Dette er et skoleprojekt på Zealand 
