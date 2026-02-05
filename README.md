@@ -100,4 +100,6 @@ import pytest
 def test_password_length(password, expected):
 assert is_password_valid(password) == expected
 
-Test - denne linje skal kunne ses
+# Pytest (password validator) testresultat
+
+![PyTest testresultat](it_sikkerhed_2026f/pytest_result.png)
