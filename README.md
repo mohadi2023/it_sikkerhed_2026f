@@ -100,3 +100,4 @@ import pytest
 def test_password_length(password, expected):
 assert is_password_valid(password) == expected
 
+Test - denne linje skal kunne ses
