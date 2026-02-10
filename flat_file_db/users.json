@@ -1,0 +1,20 @@
+[
+  {
+    "person_id": 1,
+    "first_name": "Anna",
+    "last_name": "Jensen",
+    "address": "Main Street",
+    "street_number": 12,
+    "password": "hashed_password",
+    "enabled": true
+  },
+  {
+    "person_id": 2,
+    "first_name": "Peter",
+    "last_name": "Larsen",
+    "address": "Side Street",
+    "street_number": 5,
+    "password": "hashed_pw",
+    "enabled": false
+  }
+]

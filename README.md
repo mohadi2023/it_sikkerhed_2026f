@@ -20,13 +20,14 @@ def test_crash():
    # assert False # failed test bliver ignoreret
 
 
-05/02/2026 - (Test) Teknikker
+Dato: 05/02/2026
+Opgave: (Test) Teknikker
 
 Dette repository forklarerer anvendelsen af testteknikker med password-validering i fokus. 
 
 Krav til password: 1. Passwordlængde: mellem 8-16. Mindre end 8 karakterer --> fej. Mere end 16 karakterer --> fejl 
 ____________________________________________________
-Ækvivalensklasser:
+# Ækvivalensklasser:
 
 | Klasse | Længde    | Forventet resultat |
 |--------|-----------|--------------------|
@@ -36,7 +37,7 @@ ____________________________________________________
 
 Security gate: Code / Dev gate (input validation)
 __________________________________________________
-Grænseværditest:
+# Grænseværditest:
 
 | Test | Input    | Forventet  |
 |------|----------|------------|
@@ -47,7 +48,7 @@ Grænseværditest:
 
 Security gate: Code / Dev gate
 _________________________________________________
-CRUD – Password-håndtering
+# CRUD – Password-håndtering
 +-----------+----------------------------------+
 | Operation | Beskrivelse                      |
 +-----------+----------------------------------+
@@ -64,7 +65,7 @@ CRUD – Password-håndtering
 
 Security gate: Integration security gate
 __________________________________________________
-Cycle Process Test
+# Cycle Process Test
 Scenario: Gentagne login forsøg
 
 1. Forkert password 
@@ -77,7 +78,7 @@ Forventning: Systemet håndterer gentagelser rigtigt uden datatab.
 
 Security gate: system security gate 
 ______________________________________________________
-Testpyramiden
+# Testpyramiden
 - Unit tests: password-længde validering 
 - Integration tests: Login + database 
 - System: Brugerlogin flow 
@@ -103,3 +104,50 @@ assert is_password_valid(password) == expected
 # Pytest (password validator) testresultat
 
 ![PyTest testresultat](pytest_result.png)
+
+________________________________________________________
+
+Dato: 10/02/2026 
+Opave: Flat File 
+
+Databasen er implementeret som en JSON-fil (`users.json`),
+der fungerer som en brugerdatabase.
+
+# Hver bruger består af følgende felter:
+- person_id
+- first_name
+- last_name
+- address
+- street_number
+- password
+- enabled
+
+Databasen tilgås via Python-kode, der kan læse fra og skrive til JSON-filen.
+
+# Funktionalitet
+Den implementerede flat file database understøtter følgende funktioner:
+- Oprettelse af nye brugere
+- Søgning efter brugere via person_id
+- Deaktivering af brugere
+- Håndtering af tilfælde, hvor en bruger ikke findes
+
+# Test design
+Testene er designet ved brug af test design teknikker såsom:
+- Positive tests (gyldige input)
+- Negative tests (ugyldige input)
+- Boundary tests (grænseværdier)
+
+Testene er skrevet som unit tests ved brug af pytest
+og anvender strukturen given / when / then.
+
+# Risici ved fejlede tests
+Hvis testene ikke består, kan det medføre følgende risici:
+- Brugere kan ikke oprettes korrekt
+- Systemet kan returnere forkert brugerdata
+- Deaktiverede brugere kan stadig være aktive
+- Sikkerhedsproblemer i adgangskontrol
+
+Derfor er unit tests nødvendige for at sikre korrekt funktionalitet.
+
+# Screenshot af testresultat 
+![Resultat af unit tests for flat file database](flat_file_db.png.png)
