@@ -102,4 +102,4 @@ assert is_password_valid(password) == expected
 
 # Pytest (password validator) testresultat
 
-![PyTest testresultat](it_sikkerhed_2026f/pytest_result.png)
+![PyTest testresultat](pytest_result.png)
