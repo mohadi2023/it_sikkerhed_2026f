@@ -151,3 +151,29 @@ Derfor er unit tests nødvendige for at sikre korrekt funktionalitet.
 
 # Screenshot af testresultat 
 ![Resultat af unit tests for flat file database](flat_file_db.png.png)
+___________________________________________________________
+Dato: 10/02/2026 
+Opgave: Kryptering & Hashing 
+
+# Lidt teori
+For at opfylde GDPR og sikre password-sikkerhed, bruger vi: 
+1. Hahsing af passwords (bcrypt). Denne metode er sikker og passwords kan ikke dekrypteres. 
+2. Kryptering af følsomme data (Fernet). Denne metode krypterer følsomme data med nøgle, og data dekrypteres ikke når det skal bruges. 
+
+- Kryptering: Før der gemmes følsomme data i database. 
+- Dekryptering: Når data skal bruges i et program. 
+
+# Test 
+- Hashing af password (korrekt og forkert)
+- Kryptering og dekryptering af følsom data
+- Fjernelse af dekrypteret data fra hukommelsen
+
+Screenshots af beståede tests er vedlagt.
+
+# Risici
+- Passwords kan ikke verificeres, hvis hash fejler  
+- Følsom data kan ikke genskabes, hvis kryptering/dekryptering fejler  
+- Følsom data kan ligge i hukommelsen, hvis det ikke fjernes korrekt
+
+# Testresultat - Screenshot 
+![Resultat af unit tests for kryptering og hashing](encryption_test.png)

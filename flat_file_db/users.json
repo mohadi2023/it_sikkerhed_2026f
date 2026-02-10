@@ -16,5 +16,14 @@
     "street_number": 5,
     "password": "hashed_pw",
     "enabled": false
+  },
+  {
+    "person_id": 2,
+    "first_name": "Peter",
+    "last_name": "Larsen",
+    "address": "Side Street",
+    "street_number": 5,
+    "password": "hashed_pw",
+    "enabled": true
   }
 ]
