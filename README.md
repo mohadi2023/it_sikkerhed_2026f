@@ -157,7 +157,7 @@ Opgave: Kryptering & Hashing
 
 # Lidt teori
 For at opfylde GDPR og sikre password-sikkerhed, bruger vi: 
-1. Hahsing af passwords (bcrypt). Denne metode er sikker og passwords kan ikke dekrypteres. 
+1. Hashing af passwords (bcrypt). Denne metode er sikker og passwords kan ikke dekrypteres. 
 2. Kryptering af følsomme data (Fernet). Denne metode krypterer følsomme data med nøgle, og data dekrypteres ikke når det skal bruges. 
 
 - Kryptering: Før der gemmes følsomme data i database. 
@@ -184,7 +184,7 @@ Dato: 19/02/2026
 Opgave: 1 - REST API
 
 # Formål
-Formålet med opgaven var at implementere en REST API ved brug af FastAPI. API'en håndterer CRUD-operationer testes via Swagger UI. 
+Formålet med opgaven var at implementere en REST API ved brug af FastAPI.
 
 # Teknologi 
 - Python 
@@ -207,3 +207,48 @@ python -m uvicorn rest_api.main:app --reload
 ![Swagger UI oversigt](Swagger_UI_test.png)
 
 ![Swagger UI test af POST](Swagger_UI_test2.png)
+
+# Opgave 2 - Auth Miroservice
+Der laves en separat service til login og token.
+
+# Teknologi
+
+- Python
+- FastAPI
+- Uvicorn 
+- bcrypt til hashing
+- python-jose til token generation 
+
+# Arkitektur 
+
+| Service | Port | Ansvar |
+|----------|------|--------|
+| REST API | 8000 | Håndtering af brugerdata |
+| Auth Service | 8001 | Login og token generering |
+
+# Login flow 
+1. Bruger sender username og password til `/login`
+2. Password verificeres med bcrypt hashing
+3. Hvis korrekt, genereres et JWT token
+4. Token returneres til klienten
+5. Token kan anvendes til at tilgå beskyttede endpoints
+
+# Endpoint 
+
+| Metode | Endpoint | Beskrivelse |
+|--------|----------|-------------|
+| POST | /login | Verificerer bruger og returnerer JWT token |
+
+# Token
+
+JWT token indeholder:
+
+- subject (username)
+- expiration time (udløbstid)
+
+Algoritme:
+HS256
+
+Token har en begrænset levetid for at øge sikkerheden.
+
+![Auth Swagger UI](rest_api_auth.png)
