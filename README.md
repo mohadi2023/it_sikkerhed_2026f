@@ -177,3 +177,33 @@ Screenshots af beståede tests er vedlagt.
 
 # Testresultat - Screenshot 
 ![Resultat af unit tests for kryptering og hashing](encryption_test.png)
+
+___________________________________________________________
+
+Dato: 19/02/2026
+Opgave: 1 - REST API
+
+# Formål
+Formålet med opgaven var at implementere en REST API ved brug af FastAPI. API'en håndterer CRUD-operationer testes via Swagger UI. 
+
+# Teknologi 
+- Python 
+- FastAPI
+- Uvicorn 
+- JSON, min flat file database 
+
+# Endpoints 
+
+| Metode | Endpoint | Beskrivelse |
+|--------|----------|-------------|
+| GET | / | Test endpoint |
+| GET | /users | Henter alle brugere |
+| POST | /users | Opretter ny bruger |
+
+# API'en startes
+python -m uvicorn rest_api.main:app --reload
+
+# Screenshot af test
+![Swagger UI oversigt](Swagger_UI_test.png)
+
+![Swagger UI test af POST](Swagger_UI_test2.png)

@@ -25,5 +25,14 @@
     "street_number": 5,
     "password": "hashed_pw",
     "enabled": true
+  },
+  {
+    "person_id": 10,
+    "first_name": "Mostafa",
+    "last_name": "Hadi",
+    "address": "Test Street",
+    "street_number": 1,
+    "password": "test123",
+    "enabled": true
   }
 ]
