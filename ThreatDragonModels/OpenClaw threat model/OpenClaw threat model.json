@@ -1,0 +1,26 @@
+{
+  "version": "2.6.2",
+  "summary": {
+    "title": "OpenClaw threat model",
+    "owner": "",
+    "description": "Threat modelling of OpenClaw AI agent with Telegram integration, OpenRouter API communication and filesystem interaction.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "OpenClaw Data Flow Diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
